@@ -1,0 +1,15 @@
+.scrollable-category-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  
+  .scrollable-category-bar::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .scrollable-category-bar .btn {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
