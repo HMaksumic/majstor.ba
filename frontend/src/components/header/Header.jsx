@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Link, useNavigate } from 'react-router-dom';
+import {Nav , Navbar, Container, Form, FormControl, Button, DropdownButton, Dropdown } from 'react-bootstrap';
+import AuthContext from '../../context/AuthContext';
+import { useContext } from 'react';
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <>
       <Navbar bg="light" data-bs-theme="light">
@@ -18,8 +21,20 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Pocetna</Nav.Link>
             <Nav.Link as={Link} to="/usluge">Usluge</Nav.Link>
-            <Nav.Link as={Link} to="/login">Objavi oglas</Nav.Link>
-          </Nav>
+            <Nav.Link as={Link} to={user ? "/objavi-oglas" : "/login"}>
+              Objavi oglas
+            </Nav.Link>
+          {user && (
+                        <>
+                            <Nav.Link as={Link} to="/profile">
+                                Moja stranica
+                            </Nav.Link>
+                            <Button variant="outline-danger" onClick={handleLogout}>
+                                Odjava
+                            </Button>
+                        </>
+                    )}
+                </Nav>
         </Container>
       </Navbar>
       <Navbar bg="light" className="justify-content-center">

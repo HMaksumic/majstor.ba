@@ -37,6 +37,9 @@ def register(request):
     if not name or not email or not password:
         return Response({'error': 'Please provide name, email, and password.'}, status=status.HTTP_400_BAD_REQUEST)
     
+    if User.objects.filter(email=email).exists():
+        return Response({'error': 'A user with this email already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+    
     hashed_password = make_password(password)
     user = User(name=name, email=email, password=hashed_password)
     user.save()
