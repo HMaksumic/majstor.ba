@@ -14,3 +14,7 @@
   .scrollable-navbar .dropdown-button {
     flex: 0 0 auto;
   }
+
+  .headercontainer {
+    margin-bottom: 50px;
+}

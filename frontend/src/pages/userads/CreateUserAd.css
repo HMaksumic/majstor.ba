@@ -1,0 +1,83 @@
+.create-ad-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-ad-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .create-ad-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .create-ad-container label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .create-ad-container input[type="text"],
+  .create-ad-container input[type="number"],
+  .create-ad-container input[type="date"],
+  .create-ad-container textarea,
+  .create-ad-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+  }
+  
+  .create-ad-container input[type="text"]:focus,
+  .create-ad-container input[type="number"]:focus,
+  .create-ad-container input[type="date"]:focus,
+  .create-ad-container textarea:focus,
+  .create-ad-container input[type="file"]:focus {
+    border-color: #007bff;
+  }
+  
+  .create-ad-container textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .create-ad-container button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .create-ad-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .success-message {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }

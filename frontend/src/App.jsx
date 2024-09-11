@@ -6,7 +6,8 @@ import CategoryPage from './pages/categories/CategoryPage';
 import AuthPage from './pages/authentication/AuthPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider} from './context/AuthContext';
-import Profile from './pages/Profile';
+import Profile from './pages/profile/Profile';
+import CreateUserAd from './pages/userads/CreateUserAd';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/login" element={<AuthPage />} />
             <Route path="/category/:categoryName" element={<CategoryPage />} />
             <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
+            <Route path="/objavi-oglas" element={<ProtectedRoute component={CreateUserAd} />} />
           </Routes>
         </div>
       </Router>

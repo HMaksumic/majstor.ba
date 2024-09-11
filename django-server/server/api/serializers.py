@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from base.models import Item, User
+from base.models import Item, User, UserAd, AddImage
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,3 +12,14 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
 
+
+class UserAdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAd
+        fields = ['id', 'publisher', 'title', 'description', 'category', 'price', 'city', 'date_published']
+        read_only_fields = ['id', 'publisher']
+
+class AddImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddImage
+        fields = '__all__'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AuthPage.css'; 
+import SimpleHeader from '../../components/header/SimpleHeader';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
@@ -63,6 +64,9 @@ const handleEmailChange = (e) => {
 };
 
   return (
+    <>
+    <div>
+      <SimpleHeader />
     <div className="auth-container">
       <div className="auth-box">
         <div className="logo">
@@ -114,6 +118,8 @@ const handleEmailChange = (e) => {
         </p>
       </div>
     </div>
+    </div>
+    </>
   );
 };
 
