@@ -1,0 +1,33 @@
+.ads-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .ad-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .ad-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .ad-card h3 {
+    margin-top: 0;
+  }
+  
+  .ad-card p {
+    margin: 5px 0;
+  }
+  
+  .error {
+    color: red;
+  }

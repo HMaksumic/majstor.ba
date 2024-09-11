@@ -1,0 +1,20 @@
+.scrollable-navbar {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .scrollable-navbar .container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .scrollable-navbar .nav-link,
+  .scrollable-navbar .form-control,
+  .scrollable-navbar .btn,
+  .scrollable-navbar .dropdown-button {
+    flex: 0 0 auto;
+  }
+
+  .headercontainer {
+    margin-bottom: 50px;
+}
