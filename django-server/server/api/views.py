@@ -118,11 +118,30 @@ def create_ad(request):
         print("Error creating ad:", str(e))
         return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def delete_ad(request, pk):
+    user = request.user
+    ad = UserAd.objects.filter(publisher=user, id=pk).first()
+
+    if not ad:
+        return Response({'detail': 'Ad not found'}, status=status.HTTP_404_NOT_FOUND)
     
+    ad.delete()
+    return Response({'detail': 'Ad deleted successfully'}, status=status.HTTP_200_OK)
+    
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_published_ads(request):
     user = request.user
     ads = UserAd.objects.filter(publisher=user)
-    serializer = UserAdSerializer(ads, many=True)
+    serializer = UserAdSerializer(ads, many=True, context={'request': request})
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_published_ads(request):
+    ads = UserAd.objects.all()
+    serializer = UserAdSerializer(ads, many=True, context={'request': request})
     return Response(serializer.data, status=status.HTTP_200_OK)

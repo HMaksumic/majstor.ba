@@ -1,33 +1,79 @@
-.ads-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .ad-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    margin: 10px;
-    transition: transform 0.2s;
-  }
-  
-  .ad-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .ad-card h3 {
-    margin-top: 0;
-  }
-  
-  .ad-card p {
-    margin: 5px 0;
-  }
-  
-  .error {
-    color: red;
-  }
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start; 
+}
+
+.ads-container-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 360px); 
+  gap: 20px;
+  justify-content: start; 
+  width: 50%; 
+  padding: 0 20px;
+}
+
+.inbox-placeholder {
+  width: 45%; 
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.ads-container-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 360px);
+  gap: 20px;
+  justify-content: start; 
+  width: 50%;
+  padding: 0 20px; 
+}
+
+.ad-card-profile {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 360px; 
+  height: 500px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.ad-card-profile:hover {
+  transform: scale(1.05);
+}
+
+.ad-card-profile h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.ad-card-profile p {
+  margin: 5px 0;
+  flex-grow: 1; 
+}
+
+.ad-card-profile .ad-details-profile {
+  margin-top: auto; 
+}
+
+.ad-image-profile {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+}
